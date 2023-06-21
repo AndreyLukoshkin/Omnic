@@ -28,3 +28,17 @@ $fontFamilyRoboto: 'Roboto', sans-serif;
   color: $c;
   background-color: $bc;
 }
+
+@mixin boxSize($h, $w, $bc, $br) {
+  height: $h;
+  width: $w;
+  background-image: $bc;
+  background-repeat: $br;
+}
+
+%borderForBox {
+  margin: 10px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #cecece;
+}

@@ -1,0 +1,56 @@
+@import '../Variables/variables.scss';
+@import '../svgVariables/svgVariables.scss';
+
+.boxSize__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.boxSize__container_XXS {
+  @include boxSize(42px, 42px, $XXS, no-repeat);
+}
+
+.boxSize__container_XS {
+  @include boxSize(70px, 64px, $XS, no-repeat);
+}
+
+.boxSize__container_S {
+  @include boxSize(80px, 60px, $S, no-repeat);
+}
+
+.boxSize__container_M {
+  @include boxSize(60px, 70px, $M, no-repeat);
+}
+
+.boxSize__container_L {
+  @include boxSize(100px, 80px, $L, no-repeat);
+}
+
+.boxSize__container_XL {
+  @include boxSize(110px, 90px, $XL, no-repeat);
+}
+
+.boxSize__container_XXL {
+  @include boxSize(130px, 110px, $XXL, no-repeat);
+}
+
+.boxSize__container_XXXL {
+  @include boxSize(170px, 140px, $XXXL, no-repeat);
+}
+
+.boxSize__container_sizes {
+  margin-top: 20px;
+  align-self: start;
+  margin-right: 15%;
+  .boxSize__container_size {
+    @include fontsMixin($blueColor, $fontFamily, 700, 20px);
+  }
+
+  .boxSize__container_sizeNumbers {
+    padding-top: 5px;
+    @include fontsMixin($blackColor, $fontFamily, 500, 14px);
+  }
+}
