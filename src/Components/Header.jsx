@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper__header">
       <div className="header">
         <Logo className="header__logo" />
         <div className="header__container">

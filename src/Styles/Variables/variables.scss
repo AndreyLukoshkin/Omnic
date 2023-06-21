@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+$titleUpperMargin: 8.6%;
 $blueColor: #032edd;
 $whiteColor: #ffffff;
 $blackColor: #000000;
@@ -20,4 +21,10 @@ $fontFamilyRoboto: 'Roboto', sans-serif;
   height: $h;
   background-image: $bc;
   background-repeat: $nrpt;
+}
+
+@mixin uiBtn($w, $c, $bc) {
+  width: $w;
+  color: $c;
+  background-color: $bc;
 }

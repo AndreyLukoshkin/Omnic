@@ -1,0 +1,8 @@
+@import '../Variables/variables.scss';
+
+.ui_btn {
+  height: 60px;
+  border: 2px solid $blueColor;
+  border-radius: 4px;
+  @include fontsMixin($whiteColor, $fontFamily, 700, 20px);
+}
