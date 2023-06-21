@@ -1,0 +1,41 @@
+@import '../Variables/variables.scss';
+
+.wrapper {
+  height: 100%;
+}
+
+.header {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header__logo {
+    padding-left: 44px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 25%;
+
+    border-bottom: 4px solid;
+    border-image: linear-gradient(to right, #011461 0%, #032edd 100%);
+    border-image-slice: 1;
+  }
+
+  .header__container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 75%;
+
+    border-bottom: 4px solid #e6e6e6;
+  }
+  .header__container_instruction {
+    @include fontsMixin($grayColor, $fontFamily, 600, 16px);
+  }
+  .header__container_post {
+    margin: 0 48px 0 44px;
+    @include fontsMixin($blueColor, $fontFamily, 600, 22px);
+  }
+}
