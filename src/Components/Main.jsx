@@ -6,7 +6,7 @@ import { textForImgBtnFirst, textForImgBtnSecond } from '../constants/constans'
 
 const Main = () => {
   return (
-    <div className="wrapper">
+    <div className="wrapper__main">
       {/* <Header /> */}
       <div className="main">
         <div className="main__container_text">
@@ -17,10 +17,12 @@ const Main = () => {
           <ImageButton
             textProp={textForImgBtnFirst}
             className="main__container_imgBtn_first"
+            nav="/packed"
           />
           <ImageButton
             textProp={textForImgBtnSecond}
             className="main__container_imgBtn_second"
+            nav="/return"
           />
         </div>
       </div>
