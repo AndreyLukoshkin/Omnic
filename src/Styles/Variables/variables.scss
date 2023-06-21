@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$blueColor: #032edd;
+$whiteColor: #ffffff;
+$blackColor: #000000;
+$grayColor: #57565e;
+
+$fontFamily: 'Montserrat', sans-serif;
+$fontFamilyRoboto: 'Roboto', sans-serif;
+
+@mixin fontsMixin($c, $ff, $fw, $fs) {
+  color: $c;
+  font-family: $ff;
+  font-weight: $fw;
+  font-size: $fs;
+}
+
+@mixin imgStyle($h, $bc, $nrpt) {
+  height: $h;
+  background-image: $bc;
+  background-repeat: $nrpt;
+}
