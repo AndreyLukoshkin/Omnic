@@ -45,7 +45,14 @@ $fontFamilyRoboto: 'Roboto', sans-serif;
 
 %borderForBoxTaken {
   margin: 10px;
-  border: 1px solid #cecece;
+  border: 1px solid rgb(224, 148, 148);
   border-radius: 5px;
-  box-shadow: 0 0 3px 2px red;
+  box-shadow: 0 0 5px 1px rgb(226, 150, 150);
+}
+
+%borderForBoxActive {
+  margin: 10px;
+  border: 1px solid rgb(152, 217, 152);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px rgb(166, 223, 166);
 }

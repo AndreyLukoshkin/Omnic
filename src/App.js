@@ -12,6 +12,7 @@ import NotFound from './Components/NotFound'
 
 import { useEffect } from 'react'
 import { deviceUid } from './api/deviceUid'
+import Congrats from './Components/Congrats'
 
 function App() {
   const dispatch = useDispatch()
@@ -30,6 +31,7 @@ function App() {
             <Route path="/package-size" element={<PackageSize />} />
             <Route path="/instruction" element={<Instruction />} />
             <Route path="/return" element={<Return />} />
+            <Route path="/congrats" element={<Congrats />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
