@@ -9,9 +9,16 @@
 
 .taken {
   margin: 10px;
-  border: 1px solid #cecece;
+  border: 1px solid rgb(224, 148, 148);
   border-radius: 5px;
-  box-shadow: 0 0 3px 2px red;
+  box-shadow: 0 0 5px 1px rgb(226, 150, 150);
+}
+
+.active {
+  margin: 10px;
+  border: 1px solid rgb(152, 217, 152);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px rgb(166, 223, 166);
 }
 
 .wrapper__packageSize {
@@ -95,6 +102,12 @@
   width: 256px;
   color: #ffffff;
   background-color: #032edd;
+}
+
+.packageSize__container_button_notActive {
+  border: 1px solid gray;
+  background-color: rgb(190, 190, 190);
+  color: rgb(160, 159, 159);
 }
 
 @media (max-width: 1024px) {
