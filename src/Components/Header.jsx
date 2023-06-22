@@ -1,15 +1,23 @@
 import React from 'react'
 import Logo from './Logo'
 import '../Styles/Header/header.css'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const Header = () => {
+  const navigate = useNavigate()
   return (
-    <div className="wrapper__header">
-      <div className="header">
-        <Logo className="header__logo" />
-        <div className="header__container">
-          <div className="header__container_instruction">ІНСТРУКЦІЯ</div>
+    <div className="header__wrapper">
+      <div className="header__container">
+        <Logo className="header__container_logo" />
+        <div className="header__container_button">
+          <div>
+            <button
+              onClick={() => navigate('/instruction')}
+              className="header__container_button_instruction"
+            >
+              ІНСТРУКЦІЯ
+            </button>
+          </div>
           <div className="header__container_post">ПОШТОМАТ №1234</div>
         </div>
       </div>

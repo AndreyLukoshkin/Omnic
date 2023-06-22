@@ -1,2 +1,2 @@
-export const textForImgBtnFirst = 'НАДІСЛАТИ ПОСИЛКУ ЧЕРЕЗ ПОШТОМАТ'
-export const textForImgBtnSecond = 'ПОВЕРНЕННЯ ДО ІНТЕРНЕТ МАГАЗИНУ'
+export const textForImageButtonPost = 'НАДІСЛАТИ ПОСИЛКУ ЧЕРЕЗ ПОШТОМАТ'
+export const textForImageButtonPackage = 'ПОВЕРНЕННЯ ДО ІНТЕРНЕТ МАГАЗИНУ'

@@ -6,8 +6,8 @@ const BoxSize = ({ size, sizeNumbers }) => {
     <div className="boxSize__container">
       <div className={`boxSize__container_${size}`}></div>
       <div className="boxSize__container_sizes">
-        <p className="boxSize__container_size">{size}</p>
-        <p className="boxSize__container_sizeNumbers">{sizeNumbers}</p>
+        <p className="boxSize__container_size">XS</p>
+        <p className="boxSize__container_sizeNumbers">{sizeNumbers} см</p>
       </div>
     </div>
   )

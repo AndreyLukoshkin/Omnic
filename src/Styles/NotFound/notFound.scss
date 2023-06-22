@@ -1,0 +1,5 @@
+@import '../Variables/variables.scss';
+
+.notFound__error_button {
+  @include uiBtn(200px, red, $whiteColor);
+}

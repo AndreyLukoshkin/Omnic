@@ -1,18 +1,16 @@
 import React from 'react'
-import '../Styles/Packed/packed.css'
 import Button from '../UI/Button'
+import '../Styles/Instruction/instruction.css'
 import { API_DEVICE_UID } from '../config/config'
 
-const Packed = () => {
+const Instruction = () => {
   return (
-    <div className="wrapper__packed">
-      <div className="packed__container">
-        <h2 className="packed__container_h2">
-          Відправлення має бути надійно упаковане
-        </h2>
-        <div className="packed__container_img_text">
-          <div className="packed__container_img"></div>
-          <div className="packed__container_text">
+    <div className="instruction_wrapper">
+      <div className="instruction__container">
+        <h2 className="instruction__container_h2">Інструкція</h2>
+        <div className="instruction__container_img_text">
+          <div className="instruction__container_img"></div>
+          <div className="instruction__container_text">
             <ol>
               <li>
                 Упакуйте товар у коробку чи пакет. На упаковці не повинно бути
@@ -25,16 +23,11 @@ const Packed = () => {
             </ol>
           </div>
         </div>
-        <div className="packed__container_buttons">
+        <div className="instruction__container_buttons">
           <Button
             nav={`/main/${API_DEVICE_UID}`}
-            buttonClass="packed__container_button_back"
+            buttonClass="instruction__container_button_back"
             textBtn="НАЗАД"
-          />
-          <Button
-            nav="/package-size"
-            buttonClass="packed__container_button_confirm"
-            textBtn="Я ДОБРЕ УПАКУВАВ"
           />
         </div>
       </div>
@@ -42,4 +35,4 @@ const Packed = () => {
   )
 }
 
-export default Packed
+export default Instruction
