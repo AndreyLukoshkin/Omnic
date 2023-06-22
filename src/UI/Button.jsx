@@ -4,7 +4,6 @@ import '../Styles/uibutton/uibutton.css'
 import React from 'react'
 
 const Button = ({ buttonClass, textBtn, nav }) => {
-  console.log(buttonClass)
   const navigate = useNavigate()
   return (
     <>

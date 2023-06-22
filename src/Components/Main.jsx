@@ -1,27 +1,28 @@
 import React from 'react'
-// import Header from '../Components/Header'
 import ImageButton from './ImageButton'
 import '../Styles/Main/main.css'
-import { textForImgBtnFirst, textForImgBtnSecond } from '../constants/constans'
+import {
+  textForImageButtonPost,
+  textForImageButtonPackage,
+} from '../constants/constans'
 
 const Main = () => {
   return (
-    <div className="wrapper__main">
-      {/* <Header /> */}
-      <div className="main">
+    <div className="main__wrapper">
+      <div className="main__container">
         <div className="main__container_text">
           <h1 className="main__container_text_h1">Вітаємо Вас!</h1>
           <p className="main__container_text_p">Що відправлятимемо сьогодні?</p>
         </div>
-        <div className="main__container_imgBtn">
+        <div className="main__container_imageButton">
           <ImageButton
-            textProp={textForImgBtnFirst}
-            className="main__container_imgBtn_first"
+            textProp={textForImageButtonPost}
+            className="main__container_imageButton_imgPost"
             nav="/packed"
           />
           <ImageButton
-            textProp={textForImgBtnSecond}
-            className="main__container_imgBtn_second"
+            textProp={textForImageButtonPackage}
+            className="main__container_imageButton_imgPackage"
             nav="/return"
           />
         </div>

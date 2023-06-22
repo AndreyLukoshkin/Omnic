@@ -9,35 +9,35 @@
   margin-left: 16px;
 }
 
-.boxSize__container_XXS {
+.boxSize__container_2000x1100x4050 {
   @include boxSize(42px, 42px, $XXS, no-repeat);
 }
 
-.boxSize__container_XS {
+.boxSize__container_2000x1600x4050 {
   @include boxSize(70px, 64px, $XS, no-repeat);
 }
 
-.boxSize__container_S {
+.boxSize__container_3800x1100x4050 {
   @include boxSize(80px, 60px, $S, no-repeat);
 }
 
-.boxSize__container_M {
+.boxSize__container_2000x2090x4050 {
   @include boxSize(60px, 70px, $M, no-repeat);
 }
 
-.boxSize__container_L {
+.boxSize__container_3800x1600x4050 {
   @include boxSize(100px, 80px, $L, no-repeat);
 }
 
-.boxSize__container_XL {
+.boxSize__container_3800x2090x4050 {
   @include boxSize(110px, 90px, $XL, no-repeat);
 }
 
-.boxSize__container_XXL {
+.boxSize__container_6450x2100x4050 {
   @include boxSize(130px, 110px, $XXL, no-repeat);
 }
 
-.boxSize__container_XXXL {
+.boxSize__container_6450x3650x4050 {
   @include boxSize(170px, 140px, $XXXL, no-repeat);
 }
 
@@ -52,5 +52,13 @@
   .boxSize__container_sizeNumbers {
     padding-top: 5px;
     @include fontsMixin($blackColor, $fontFamily, 500, 14px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .boxSize__container_sizes {
+    margin-top: 10px;
+    margin-right: 5px;
+    align-self: start;
   }
 }

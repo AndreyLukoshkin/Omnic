@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-.box_container8, .box_container7, .box_container6, .box_container5, .box_container4, .box_container3, .box_container2, .box_container1 {
+.empty {
   margin: 10px;
   border: 1px solid #cecece;
   border-radius: 5px;
   box-shadow: 0 0 5px 1px #cecece;
+}
+
+.taken {
+  margin: 10px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 2px red;
 }
 
 .wrapper__packageSize {
@@ -27,39 +34,85 @@
 }
 
 .packageSize__container_boxes {
+  margin-bottom: 100px;
   display: grid;
   grid-template-rows: 100px 78px 78px 152px 80px;
   grid-template-columns: 206px 260px 324px;
 }
 
+.box_container1 {
+  order: 1;
+  grid-area: 1/1/1/1;
+}
+
 .box_container2 {
-  grid-area: 2/2/span 2/3;
+  order: 2;
+  grid-area: 2/1/span 2/1;
+}
+
+.box_container3 {
+  order: 3;
 }
 
 .box_container4 {
-  grid-area: 1/3/span 2/3;
+  order: 4;
+  grid-area: 4/1/5/1;
 }
 
 .box_container5 {
-  grid-area: 2/1/span 2/2;
+  order: 5;
+  grid-area: 2/2/span 2/2;
 }
 
 .box_container6 {
+  order: 6;
+  grid-area: 4/2/5/2;
+}
+
+.box_container7 {
+  order: 7;
+  grid-area: 1/3/span 2/3;
+}
+
+.box_container8 {
+  order: 8;
   grid-area: 3/3/span 2/3;
 }
 
 .packageSize__container_button_back {
-  margin: 52px 10px;
+  order: 9;
+  margin: 52px 0 0 10px;
   width: 180px;
   color: #032edd;
   background-color: #ffffff;
 }
 
 .packageSize__container_button_confirm {
-  margin: 52px 10px;
+  order: 10;
+  margin: 52px 10px 0 0;
   grid-column-start: 3;
   justify-self: flex-end;
   width: 256px;
   color: #ffffff;
   background-color: #032edd;
+}
+
+@media (max-width: 1024px) {
+  .packageSize__container_boxes {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 650px) {
+  .packageSize__container_boxes {
+    display: flex;
+    flex-direction: column;
+  }
+  .packageSize__container_button_back {
+    margin: 20px 0 0 10px;
+  }
+  .packageSize__container_button_confirm {
+    margin: 20px 10px 0 10px;
+  }
 }/*# sourceMappingURL=packageSize.css.map */

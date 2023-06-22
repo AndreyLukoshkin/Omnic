@@ -18,46 +18,81 @@
 }
 
 .packageSize__container_boxes {
+  margin-bottom: 100px;
   display: grid;
   grid-template-rows: 100px 78px 78px 152px 80px;
   grid-template-columns: 206px 260px 324px;
 }
 .box_container1 {
-  @extend %borderForBox;
+  order: 1;
+  grid-area: 1 / 1 / 1 / 1;
 }
 .box_container2 {
-  @extend %borderForBox;
-  grid-area: 2 / 2 / span 2 / 3;
+  order: 2;
+  grid-area: 2 / 1 / span 2 / 1;
 }
 .box_container3 {
-  @extend %borderForBox;
+  order: 3;
 }
 .box_container4 {
-  @extend %borderForBox;
-  grid-area: 1 / 3 / span 2 / 3;
+  order: 4;
+  grid-area: 4 / 1 / 5 / 1;
 }
 .box_container5 {
-  @extend %borderForBox;
-  grid-area: 2 / 1 / span 2 / 2;
+  order: 5;
+  grid-area: 2 / 2 / span 2 / 2;
 }
 .box_container6 {
-  @extend %borderForBox;
-  grid-area: 3 / 3 / span 2 / 3;
+  order: 6;
+  grid-area: 4 / 2 / 5 / 2;
 }
 .box_container7 {
-  @extend %borderForBox;
+  order: 7;
+  grid-area: 1 / 3 / span 2 / 3;
 }
 .box_container8 {
-  @extend %borderForBox;
+  order: 8;
+  grid-area: 3 / 3 / span 2 / 3;
+}
+
+.empty {
+  @extend %borderForBoxEmpty;
+}
+
+.taken {
+  @extend %borderForBoxTaken;
 }
 
 .packageSize__container_button_back {
-  margin: 52px 10px;
+  order: 9;
+  margin: 52px 0 0 10px;
   @include uiBtn(180px, $blueColor, $whiteColor);
 }
 .packageSize__container_button_confirm {
-  margin: 52px 10px;
+  order: 10;
+  margin: 52px 10px 0 0;
   grid-column-start: 3;
   justify-self: flex-end;
   @include uiBtn(256px, $whiteColor, $blueColor);
+}
+
+@media (max-width: 1024px) {
+  .packageSize__container_boxes {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 650px) {
+  .packageSize__container_boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .packageSize__container_button_back {
+    margin: 20px 0 0 10px;
+  }
+  .packageSize__container_button_confirm {
+    margin: 20px 10px 0 10px;
+  }
 }
