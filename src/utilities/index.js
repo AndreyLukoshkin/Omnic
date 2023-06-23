@@ -30,3 +30,14 @@ export const checkSizeForPackage = (cells, uid) => {
       el.params.depth <= uid.max_cell_size.depth,
   }))
 }
+
+export const classNameCheckSizeAndEmptyAvailable = (cell) => {
+  if (!cell.has_empty || !cell.isAvailable) return 'notAvailable'
+  else return 'empty'
+}
+
+// ${
+//   cell.has_empty ? 'empty' : 'taken'
+// }  ${i === active ? 'active' : ''} ${
+//   cell.isAvailable ? 'available' : 'notAvailable'
+// }
