@@ -21,13 +21,13 @@ export const findCharsOfSizes = (cells, loading) => {
   return arr
 }
 
-export const checkSizeForPackage = (cells, uid) => {
-  return cells.map((el) => ({
-    ...el,
+export const checkSizeForPackage = (cells, deviceUid) => {
+  return cells.map((cell) => ({
+    ...cell,
     isAvailable:
-      el.params.width <= uid.max_cell_size.width &&
-      el.params.height <= uid.max_cell_size.height &&
-      el.params.depth <= uid.max_cell_size.depth,
+      cell.params.width <= deviceUid.max_cell_size.width &&
+      cell.params.height <= deviceUid.max_cell_size.height &&
+      cell.params.depth <= deviceUid.max_cell_size.depth,
   }))
 }
 
@@ -36,8 +36,8 @@ export const classNameCheckSizeAndEmptyAvailable = (cell) => {
   else return 'empty'
 }
 
-// ${
-//   cell.has_empty ? 'empty' : 'taken'
-// }  ${i === active ? 'active' : ''} ${
-//   cell.isAvailable ? 'available' : 'notAvailable'
-// }
+export const findExactSizeOfBoxContainer = (cell) => {
+  return `${Math.round(cell.params.width / 10 - 0.2)}x${Math.round(
+    cell.params.height / 10 - 0.2
+  )}`
+}

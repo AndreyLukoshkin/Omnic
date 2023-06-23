@@ -1,22 +1,24 @@
 import axios from 'axios'
+
 import { API_BASE_URL, API_DEVICE_UID } from '../../config'
+import { GET_UID_ERROR, SET_UID, UID_REQUEST } from '../constants'
 
 export const actionDeviceUidRequest = () => {
   return {
-    type: 'UID_REQUEST',
+    type: UID_REQUEST,
   }
 }
 
 export const actionsDeviceUidSuccess = (data) => {
   return {
-    type: 'SET_UID',
+    type: SET_UID,
     payload: data,
   }
 }
 
 export const actionsDeviceUidError = (error) => {
   return {
-    type: 'GET_UID_ERROR',
+    type: GET_UID_ERROR,
     payload: error,
   }
 }

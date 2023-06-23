@@ -1,22 +1,28 @@
 import axios from 'axios'
+
 import { API_BASE_URL, API_DEVICE_UID } from '../../config'
+import {
+  CELLS_AVAILABLE_REQUEST,
+  GET_AVAILABLE_CELLS,
+  GET_CELLS_ERROR,
+} from '../constants'
 
 export const actionCellsAvailableRequest = () => {
   return {
-    type: 'CELLS_AVAILABLE_REQUEST',
+    type: CELLS_AVAILABLE_REQUEST,
   }
 }
 
 export const actionCellsAvailableSuccess = (data) => {
   return {
-    type: 'GET_AVAILABLE_CELLS',
+    type: GET_AVAILABLE_CELLS,
     payload: data,
   }
 }
 
 export const actionCellsAvailableError = (error) => {
   return {
-    type: 'GET_CELLS_ERROR',
+    type: GET_CELLS_ERROR,
     payload: error,
   }
 }
@@ -31,7 +37,7 @@ export const getCellsAvailable = (deviceId) => {
       const data = await response.data.data
       dispatch(actionCellsAvailableSuccess({ deviceId, data }))
     } catch (error) {
-      dispatch(actionCellsAvailableError(error))
+      dispatch(actionCellsAvailableError(error.message))
     }
   }
 }

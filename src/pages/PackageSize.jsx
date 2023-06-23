@@ -1,22 +1,26 @@
+import '../styles/package-size/packageSize.css'
+
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Button from '../layout/Button'
-import BoxSize from '../components/BoxSize'
-import '../styles/package-size/packageSize.css'
-import { getCellsAvailable } from '../store/actions/actionsCellsAvailable'
-import Loader from '../layout/Loader'
 import { useNavigate } from 'react-router-dom'
+
+import BoxSize from '../components/BoxSize'
+import { API_DEVICE_UID } from '../config'
+import Button from '../layout/Button'
+import Loader from '../layout/Loader'
+import { getCellsAvailable } from '../store/actions/actionsCellsAvailable'
+import { getDeviceUid } from '../store/actions/actionsDeviceUid'
 import {
   classNameCheckSizeAndEmptyAvailable,
   filterCellsFromWrongSize,
   findCharsOfSizes,
+  findExactSizeOfBoxContainer,
 } from '../utilities'
-import { API_DEVICE_UID } from '../config'
-import { getDeviceUid } from '../store/actions/actionsDeviceUid'
 
 const PackageSize = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
   const [active, setActive] = useState('notActive')
   const [isActive, setIsActive] = useState(false)
 
@@ -27,8 +31,11 @@ const PackageSize = () => {
   const cells = useSelector((state) => state.reducerCellsAvailable.data)
   const uid = useSelector((state) => state.reducerDeviceUid.uidData)
 
-  const arrayWithCells = filterCellsFromWrongSize(cells, isCellsLoading)
-  const arrayWithCharsOfSizes = findCharsOfSizes(arrayWithCells, isCellsLoading)
+  const arrayWithCellsFiltered = filterCellsFromWrongSize(cells, isCellsLoading)
+  const arrayWithCharsOfSizes = findCharsOfSizes(
+    arrayWithCellsFiltered,
+    isCellsLoading
+  )
 
   const handleItemClick = (index, elHasEmpty, isAvailable) => {
     if (elHasEmpty && isAvailable) {
@@ -41,7 +48,7 @@ const PackageSize = () => {
     if (!sessionStorage.getItem('uid')) {
       navigate(`/main/${API_DEVICE_UID}`)
     }
-  }, [sessionStorage.getItem('uid')])
+  }, [navigate])
 
   useEffect(() => {
     dispatch(getDeviceUid())
@@ -55,8 +62,8 @@ const PackageSize = () => {
       <div className="packageSize_container">
         <h2 className="packageSize_container_h2">Оберіть розмір посилки</h2>
         <div className="packageSize__container_boxes">
-          {!isCellsLoading && arrayWithCells.length > 1 ? (
-            arrayWithCells.map((cell, i) => (
+          {!isCellsLoading && arrayWithCellsFiltered.length > 1 ? (
+            arrayWithCellsFiltered.map((cell, i) => (
               <div
                 onClick={() =>
                   handleItemClick(i, cell.has_empty, cell.isAvailable)
@@ -69,14 +76,12 @@ const PackageSize = () => {
                 <BoxSize
                   charSize={arrayWithCharsOfSizes[i]}
                   size={cell.type.split('.').join('')}
-                  sizeNumbers={`${Math.round(
-                    cell.params.width / 10 - 0.2
-                  )}x${Math.round(cell.params.height / 10 - 0.2)}`}
+                  sizeNumbers={findExactSizeOfBoxContainer(cell)}
                 />
               </div>
             ))
           ) : error.isError ? (
-            <div>ERROR MESSAGE: {error.error.message}</div>
+            <div>ERROR MESSAGE: {error.error}</div>
           ) : (
             <div>
               <Loader />

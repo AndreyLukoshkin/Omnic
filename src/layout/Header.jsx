@@ -1,7 +1,9 @@
-import React from 'react'
-import Logo from '../components/Logo'
 import '../styles/header/header.css'
+
+import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+
+import Logo from '../components/Logo'
 
 const Header = () => {
   const navigate = useNavigate()
