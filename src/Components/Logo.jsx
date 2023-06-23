@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+
 import { API_DEVICE_UID } from '../config'
 
 const Logo = ({ className }) => {

@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
 import '../styles/packed/packed.css'
+
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
 import { API_DEVICE_UID } from '../config'
 import Button from '../layout/Button'
-import { useDispatch } from 'react-redux'
 import { getDeviceUid } from '../store/actions/actionsDeviceUid'
-import { useNavigate } from 'react-router-dom'
 
 const Packed = () => {
   const navigate = useNavigate()
@@ -18,7 +20,7 @@ const Packed = () => {
     if (!sessionStorage.getItem('uid')) {
       navigate(`/main/${API_DEVICE_UID}`)
     }
-  }, [sessionStorage.getItem('uid')])
+  }, [navigate])
 
   return (
     <div className="wrapper__packed">

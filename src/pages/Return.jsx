@@ -1,6 +1,7 @@
+import '../styles/return/return.css'
+
 import React from 'react'
 
-import '../styles/return/return.css'
 import { API_DEVICE_UID } from '../config'
 import Button from '../layout/Button'
 

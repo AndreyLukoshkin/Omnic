@@ -1,5 +1,7 @@
-import React from 'react'
 import '../styles/instruction/instruction.css'
+
+import React from 'react'
+
 import { API_DEVICE_UID } from '../config'
 import Button from '../layout/Button'
 

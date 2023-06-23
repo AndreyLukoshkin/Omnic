@@ -1,8 +1,9 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import reducerDeviceUid from './reducers/reducerDeviceUid'
+import thunk from 'redux-thunk'
+
 import reducerCellsAvailable from './reducers/reducerCellsAvailable'
+import reducerDeviceUid from './reducers/reducerDeviceUid'
 
 const rootReducer = combineReducers({
   reducerDeviceUid: reducerDeviceUid,

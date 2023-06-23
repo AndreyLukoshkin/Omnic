@@ -1,17 +1,22 @@
 import { checkSizeForPackage } from '../../utilities'
+import {
+  CELLS_AVAILABLE_REQUEST,
+  GET_AVAILABLE_CELLS,
+  GET_CELLS_ERROR,
+} from '../constants'
 
 const initialValue = {
   isError: false,
   isLoading: true,
   data: [],
-  error: {},
+  error: '',
 }
 
 const reducerCellsAvailable = (state = initialValue, action) => {
   switch (action.type) {
-    case 'CELLS_AVAILABLE_REQUEST':
+    case CELLS_AVAILABLE_REQUEST:
       return { ...state, isLoading: true }
-    case 'GET_AVAILABLE_CELLS':
+    case GET_AVAILABLE_CELLS:
       return {
         ...state,
         isLoading: false,
@@ -21,11 +26,11 @@ const reducerCellsAvailable = (state = initialValue, action) => {
           action.payload.deviceId
         ),
       }
-    case 'GET_CELLS_ERROR':
+    case GET_CELLS_ERROR:
       return {
         ...state,
         isError: true,
-        isLoading: true,
+        isLoading: false,
         error: action.payload,
       }
     default:

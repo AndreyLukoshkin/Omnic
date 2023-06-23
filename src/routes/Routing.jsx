@@ -1,14 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Main from '../pages/Main'
-import Header from '../layout/Header'
-import Packed from '../pages/Packed'
-import PackageSize from '../pages/PackageSize'
-import Instruction from '../pages/Instruction'
-import Return from '../pages/Return'
-import Congrats from '../pages/Congrats'
-import NotFound from '../pages/NotFound'
+
 import { API_DEVICE_UID } from '../config'
+import Header from '../layout/Header'
+import Congrats from '../pages/Congrats'
+import Instruction from '../pages/Instruction'
+import Main from '../pages/Main'
+import NotFound from '../pages/NotFound'
+import PackageSize from '../pages/PackageSize'
+import Packed from '../pages/Packed'
+import Return from '../pages/Return'
 
 const Routing = () => {
   return (
