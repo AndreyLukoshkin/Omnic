@@ -52,7 +52,7 @@ $fontFamilyRoboto: 'Roboto', sans-serif;
 
 %borderForBoxActive {
   margin: 10px;
-  border: 1px solid rgb(152, 217, 152);
+  border: 1px solid $blueColor;
   border-radius: 5px;
-  box-shadow: 0 0 10px 1px rgb(166, 223, 166);
+  box-shadow: 0 0 10px 1px $blueColor;
 }
