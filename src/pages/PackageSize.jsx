@@ -6,7 +6,11 @@ import '../styles/package-size/packageSize.css'
 import { getCellsAvailable } from '../store/actions/actionsCellsAvailable'
 import Loader from '../layout/Loader'
 import { useNavigate } from 'react-router-dom'
-import { filterCellsFromWrongSize, findCharsOfSizes } from '../utilities'
+import {
+  classNameCheckSizeAndEmptyAvailable,
+  filterCellsFromWrongSize,
+  findCharsOfSizes,
+} from '../utilities'
 import { API_DEVICE_UID } from '../config'
 import { getDeviceUid } from '../store/actions/actionsDeviceUid'
 
@@ -26,8 +30,8 @@ const PackageSize = () => {
   const arrayWithCells = filterCellsFromWrongSize(cells, isCellsLoading)
   const arrayWithCharsOfSizes = findCharsOfSizes(arrayWithCells, isCellsLoading)
 
-  const handleItemClick = (index, elHasEmpty) => {
-    if (elHasEmpty) {
+  const handleItemClick = (index, elHasEmpty, isAvailable) => {
+    if (elHasEmpty && isAvailable) {
       setActive(index)
       setIsActive(true)
     }
@@ -54,13 +58,13 @@ const PackageSize = () => {
           {!isCellsLoading && arrayWithCells.length > 1 ? (
             arrayWithCells.map((cell, i) => (
               <div
-                onClick={() => handleItemClick(i, cell.has_empty)}
+                onClick={() =>
+                  handleItemClick(i, cell.has_empty, cell.isAvailable)
+                }
                 key={cell.type}
                 className={`box_container${i + 1} ${
-                  cell.has_empty ? 'empty' : 'taken'
-                }  ${i === active ? 'active' : ''} ${
-                  cell.isAvailable ? 'available' : 'notAvailable'
-                }`}
+                  i === active ? 'active' : ''
+                } ${classNameCheckSizeAndEmptyAvailable(cell)}`}
               >
                 <BoxSize
                   charSize={arrayWithCharsOfSizes[i]}
