@@ -1,5 +1,5 @@
 @import '../Variables/variables.scss';
-@import '../svgVariables/svgVariables.scss';
+@import '../svg-variables/svgVariables.scss';
 
 .wrapper__packageSize {
   width: 100%;
@@ -32,10 +32,10 @@
   grid-area: 2 / 1 / span 2 / 1;
 }
 .box_container3 {
-  order: 3;
+  order: 4;
 }
 .box_container4 {
-  order: 4;
+  order: 3;
   grid-area: 4 / 1 / 5 / 1;
 }
 .box_container5 {
@@ -64,6 +64,10 @@
 }
 
 .taken {
+  @extend %borderForBoxTaken;
+}
+
+.notAvailable {
   @extend %borderForBoxTaken;
 }
 

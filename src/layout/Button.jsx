@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import '../Styles/uibutton/uibutton.css'
+import '../styles/uibutton/uibutton.css'
 
 import React from 'react'
 

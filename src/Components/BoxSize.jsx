@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Styles/BoxSize/boxSize.css'
+import '../styles/boxSize/boxSize.css'
 
 const BoxSize = ({ size, sizeNumbers, charSize }) => {
   return (
