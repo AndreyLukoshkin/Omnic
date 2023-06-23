@@ -13,7 +13,6 @@ import { getDeviceUid } from '../store/actions/actionsDeviceUid'
 import {
   classNameCheckSizeAndEmptyAvailable,
   filterCellsFromWrongSize,
-  findCharsOfSizes,
   findExactSizeOfBoxContainer,
 } from '../utilities'
 
@@ -32,10 +31,6 @@ const PackageSize = () => {
   const uid = useSelector((state) => state.reducerDeviceUid.uidData)
 
   const arrayWithCellsFiltered = filterCellsFromWrongSize(cells, isCellsLoading)
-  const arrayWithCharsOfSizes = findCharsOfSizes(
-    arrayWithCellsFiltered,
-    isCellsLoading
-  )
 
   const handleItemClick = (index, elHasEmpty, isAvailable) => {
     if (elHasEmpty && isAvailable) {
@@ -74,7 +69,7 @@ const PackageSize = () => {
                 } ${classNameCheckSizeAndEmptyAvailable(cell)}`}
               >
                 <BoxSize
-                  charSize={arrayWithCharsOfSizes[i]}
+                  charSize={cell.cellSize}
                   size={cell.type.split('.').join('')}
                   sizeNumbers={findExactSizeOfBoxContainer(cell)}
                 />

@@ -4,26 +4,21 @@ export const filterCellsFromWrongSize = (cells, loading) => {
   }
 }
 
-export const findCharsOfSizes = (cells, loading) => {
-  let arr = []
-  if (cells && !loading) {
-    cells.forEach((el) => {
-      if (el.type === '200.0x110.0x405.0') arr.push('XXS')
-      if (el.type === '200.0x160.0x405.0') arr.push('XS')
-      if (el.type === '200.0x209.0x405.0') arr.push('M')
-      if (el.type === '380.0x110.0x405.0') arr.push('S')
-      if (el.type === '380.0x160.0x405.0') arr.push('L')
-      if (el.type === '380.0x209.0x405.0') arr.push('XL')
-      if (el.type === '645.0x210.0x405.0') arr.push('XXL')
-      if (el.type === '645.0x365.0x405.0') arr.push('XXXL')
-    })
-  }
-  return arr
+export const sizeMappings = {
+  '200.0x110.0x405.0': 'XXS',
+  '200.0x160.0x405.0': 'XS',
+  '200.0x209.0x405.0': 'M',
+  '380.0x110.0x405.0': 'S',
+  '380.0x160.0x405.0': 'L',
+  '380.0x209.0x405.0': 'XL',
+  '645.0x210.0x405.0': 'XXL',
+  '645.0x365.0x405.0': 'XXXL',
 }
 
-export const checkSizeForPackage = (cells, deviceUid) => {
+export const checkSizeForPackage = (cells, deviceUid, sizeMappings) => {
   return cells.map((cell) => ({
     ...cell,
+    cellSize: sizeMappings[cell.type],
     isAvailable:
       cell.params.width <= deviceUid.max_cell_size.width &&
       cell.params.height <= deviceUid.max_cell_size.height &&
