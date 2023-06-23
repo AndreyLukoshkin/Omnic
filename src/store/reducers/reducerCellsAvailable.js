@@ -1,4 +1,4 @@
-import { checkSizeForPackage } from '../../utilities'
+import { checkSizeForPackage, sizeMappings } from '../../utilities'
 import {
   CELLS_AVAILABLE_REQUEST,
   GET_AVAILABLE_CELLS,
@@ -23,7 +23,8 @@ const reducerCellsAvailable = (state = initialValue, action) => {
         isError: false,
         data: checkSizeForPackage(
           action.payload.data.cell_types,
-          action.payload.deviceId
+          action.payload.deviceId,
+          sizeMappings
         ),
       }
     case GET_CELLS_ERROR:

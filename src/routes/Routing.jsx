@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import { API_DEVICE_UID } from '../config'
 import Header from '../layout/Header'
@@ -15,7 +15,11 @@ const Routing = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />}>
+        <Route element={<Header />}>
+          <Route
+            path="/"
+            element={<Navigate replace to={`/main/${API_DEVICE_UID}`} />}
+          />
           <Route path={`/main/${API_DEVICE_UID}`} element={<Main />} />
           <Route path={`/packed/${API_DEVICE_UID}`} element={<Packed />} />
           <Route
