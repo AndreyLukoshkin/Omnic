@@ -7,7 +7,7 @@
   box-shadow: 0 0 5px 1px #cecece;
 }
 
-.taken {
+.notAvailable, .taken {
   margin: 10px;
   border: 1px solid rgb(224, 148, 148);
   border-radius: 5px;
@@ -58,11 +58,11 @@
 }
 
 .box_container3 {
-  order: 3;
+  order: 4;
 }
 
 .box_container4 {
-  order: 4;
+  order: 3;
   grid-area: 4/1/5/1;
 }
 

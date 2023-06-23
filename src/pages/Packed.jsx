@@ -1,9 +1,25 @@
-import React from 'react'
-import '../Styles/Packed/packed.css'
-import Button from '../UI/Button'
-import { API_DEVICE_UID } from '../config/config'
+import React, { useEffect } from 'react'
+import '../styles/packed/packed.css'
+import { API_DEVICE_UID } from '../config'
+import Button from '../layout/Button'
+import { useDispatch } from 'react-redux'
+import { getDeviceUid } from '../store/actions/actionsDeviceUid'
+import { useNavigate } from 'react-router-dom'
 
 const Packed = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getDeviceUid())
+  }, [dispatch])
+
+  useEffect(() => {
+    if (!sessionStorage.getItem('uid')) {
+      navigate(`/main/${API_DEVICE_UID}`)
+    }
+  }, [sessionStorage.getItem('uid')])
+
   return (
     <div className="wrapper__packed">
       <div className="packed__container">
@@ -32,7 +48,7 @@ const Packed = () => {
             textBtn="НАЗАД"
           />
           <Button
-            nav="/package-size"
+            nav={`/package-size/${API_DEVICE_UID}`}
             buttonClass="packed__container_button_confirm"
             textBtn="Я ДОБРЕ УПАКУВАВ"
           />

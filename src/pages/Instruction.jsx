@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from '../UI/Button'
-import '../Styles/Instruction/instruction.css'
-import { API_DEVICE_UID } from '../config/config'
+import '../styles/instruction/instruction.css'
+import { API_DEVICE_UID } from '../config'
+import Button from '../layout/Button'
 
 const Instruction = () => {
   return (

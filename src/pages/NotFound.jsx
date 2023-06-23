@@ -1,7 +1,7 @@
 import React from 'react'
-import { API_DEVICE_UID } from '../config/config'
-import Button from '../UI/Button'
-import '../Styles/NotFound/notFound.css'
+import { API_DEVICE_UID } from '../config'
+import Button from '../layout/Button'
+import '../styles/not-found/notFound.css'
 
 const NotFound = () => {
   return (
